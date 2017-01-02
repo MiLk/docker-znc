@@ -7,12 +7,13 @@ ENV ZNC_VERSION 1.6.4
 
 RUN apk add --no-cache sudo bash autoconf automake gettext-dev make g++ \
 	       openssl-dev pkgconfig perl-dev swig zlib-dev ca-certificates \
+         python3 python3-dev \
     && mkdir -p /src \
     && cd /src \
     && wget "http://znc.in/releases/archive/znc-${ZNC_VERSION}.tar.gz" \
     && tar -zxf "znc-${ZNC_VERSION}.tar.gz" \
     && cd "znc-${ZNC_VERSION}" \
-    && ./configure --disable-ipv6 \
+    && ./configure --disable-ipv6 --enable-python \
     && make \
     && make install \
     && rm -rf /var/cache/apk/*
