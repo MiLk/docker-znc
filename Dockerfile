@@ -1,9 +1,9 @@
-# version 1.6.1-2
+# version 1.6.4-1
 # docker-version 1.11.1
 FROM alpine:3.3
 MAINTAINER Jim Myhrberg "contact@jimeh.me"
 
-ENV ZNC_VERSION 1.6.1
+ENV ZNC_VERSION 1.6.4
 
 RUN apk add --no-cache sudo bash autoconf automake gettext-dev make g++ \
 	       openssl-dev pkgconfig perl-dev swig zlib-dev ca-certificates \
